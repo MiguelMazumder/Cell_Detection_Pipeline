@@ -3,10 +3,13 @@
 # Cell Detection and Counting Pipeline
 Typical cell detections systems such as qpath can often create excessive false positives or only be effective for certain cell types.
 The goal of our this MATLAB cell detection pipeline is to create an accurate cell detection system as well as include user preferences for output cell analysis for the Shook Lab at GWU.
+
 To avoid script dependency, which is often an issue with most cell detection software, all of the detection, counting, formatting, and functions are executed from a single script.
 The pipeline of the script begins with a folder access and organization function to collect all cell image .tif and .tiff files from a user prompted folder, as well as desired quadrant dimensions for later cell grouping analysis.
+
 The cell detection and counting function is then performed on the available files in the folder. The details of the cell detection includes: Takes a base image, separates it into channels, and detects cells based on the overlap of nucleus and cell stains.
 The current threshold used for our images is 75%, but this is adjustable. The detection process utilizes thresholding, connected components labeling, and region properties to detect the overlap of nucleus and cell stains.
+
 It then updates cell counts for each quadrant as well as additional features such as saving images of the cell detections and/or detected cell locations. The additional features are optional based on user inputs.
 
 Author: Miguel Mazumder  
